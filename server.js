@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+var PORT = process.env.PORT || 8080;
 const mysql = require('mysql');
 
 app.use(express.static("public"));
@@ -16,6 +17,6 @@ app.set("view engine", "handlebars");
 
 //app.use(routes);
 
-app.listen(process.env.PORT || 8080, function() {
-    console.log('Your node js server is running');
+app.listen(PORT, function () {
+    console.log('Server listening on: http://localhost:' + PORT);
 });
