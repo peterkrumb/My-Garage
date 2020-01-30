@@ -21,8 +21,11 @@ app.set("view engine", "handlebars");
 const script = require('./public/assets/js/script');
 
 script.getAll();
+
+=======
 //app.use(routes);
 var db = require("./models");
+
 //app.use(routes);
 require("./controllers/api-routes.js")(app);
 
