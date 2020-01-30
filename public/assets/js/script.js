@@ -13,8 +13,9 @@ function getAll() {
     request(options, function (error, response) {
         if (error) throw error;
         var parse = JSON.parse(response.body);
-        console.log(parse.listings[0].media.photo_links[0]);
-        console.log(parse.listings[0].heading);
+        var image = parse.listings[0].media.photo_links[0]
+        $(".car-image").attr("src", image);
+        $(".heading").text(parse.listings[0].heading);
         console.log(parse.listings[0].build.body_type);
         console.log(parse.listings[0].build.drivetrain);
         console.log(parse.listings[0].build.engine);
