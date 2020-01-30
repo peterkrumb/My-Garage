@@ -17,6 +17,10 @@ app.set("view engine", "handlebars");
 //<--Requires routes directory containing the controller-->
 //var routes = require("./controllers/songs-controller.js");
 
+
+const script = require('./public/assets/js/script');
+
+script.getAll();
 //app.use(routes);
 
 app.listen(PORT, function () {
