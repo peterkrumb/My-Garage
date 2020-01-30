@@ -22,7 +22,14 @@ const script = require('./public/assets/js/script');
 
 script.getAll();
 //app.use(routes);
+var db = require("./models");
+//app.use(routes);
+require("./controllers/api-routes.js")(app);
 
-app.listen(PORT, function () {
-    console.log('Server listening on: http://localhost:' + PORT);
+// Syncing our sequelize models and then starting our Express app
+// =============================================================
+db.sequelize.sync({ force: true }).then(function () {
+    app.listen(PORT, function () {
+        console.log("App listening on PORT " + PORT);
+    });
 });
