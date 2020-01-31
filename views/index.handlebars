@@ -1,6 +1,6 @@
-<body>
+<div class="everything">
     <div class="something">
-        <div class="main col s12">
+        <div id="main" class="main col s12">
             <div class="row">
                 <div class="year col s6">
                     <input class="search" type="text" placeholder="Year">
@@ -16,7 +16,6 @@
         </div>
     </div>
     <div class="cards">
-
         <div class="row">
             <div class="col m12">
                 {{#each data }}
@@ -42,13 +41,9 @@
             </div>
         </div>
     </div>
-
-
-
-
     {{!-- <img class="car-image" src="{{media.photo_links}}"> --}}
 
-</body>
+</div>
 {{!-- 
 <p>Body Type: {{build.body_type}} </p>
 <p>Drivetrain: {{build.drivetrain}}</p>
@@ -59,37 +54,5 @@
 
 
 <style>
-    .body {
-        background: url("https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Car_Show_%282652965535%29.jpg/1200px-Car_Show_%282652965535%29.jpg");
-    }
 
-    .something {
-        display: flex;
-        justify-content: center;
-        padding-top: 30px;
-    }
-
-    .testing {
-        min-height: 408px;
-    }
-
-    .heading {
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        overflow: hidden;
-    }
-
-    .searchBtn {
-        background: rgb(255, 60, 0);
-        color: white;
-        padding: 5px 10px;
-        border-radius: 10px;
-
-    }
-
-    .main {
-        text-align: right;
-        width: 500px;
-        height: 200px;
-    }
 </style>
