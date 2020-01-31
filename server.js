@@ -18,17 +18,16 @@ app.set("view engine", "handlebars");
 //var routes = require("./controllers/songs-controller.js");
 
 
-const script = require('./public/assets/js/script');
+// const script = require('./public/assets/js/script');
 
-script.getAll();
+// script.getAll();
 
-=======
 //app.use(routes);
 var db = require("./models");
 
 //app.use(routes);
 require("./controllers/api-routes.js")(app);
-
+require("./controllers/marketcheckapi")(app);
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
 db.sequelize.sync({ force: true }).then(function () {

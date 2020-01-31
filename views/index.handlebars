@@ -1,0 +1,95 @@
+<body>
+    <div class="something">
+        <div class="main col s12">
+            <div class="row">
+                <div class="year col s6">
+                    <input class="search" type="text" placeholder="Year">
+                </div>
+                <div class="make col s6">
+                    <input class="search" type="text" placeholder="Make">
+                </div>
+                <div class="Model col s12">
+                    <input class="search" type="text" placeholder="Model">
+                </div>
+            </div>
+            <button class="searchBtn">Submit</button>
+        </div>
+    </div>
+    <div class="cards">
+
+        <div class="row">
+            <div class="col m12">
+                {{#each data }}
+                <div class="testing col s4 m3">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="{{media.photo_links}}">
+                            <span class="card-title"></span>
+                            <a class="btn-floating halfway-fab waves-effect waves-light red"><i
+                                    class="material-icons">+</i></a>
+                        </div>
+                        <div class="card-content">
+                            <p class="heading">{{heading}}</p>
+                            <p>Body Type: {{build.body_type}} </p>
+                            <p>Drivetrain: {{build.drivetrain}}</p>
+                            <p>Engine: {{build.engine}}</p>
+                            <p>Number of doors: {{build.doors}}</p>
+                            <p>Transmission: {{build.transmission}}</p>
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+
+
+
+
+    {{!-- <img class="car-image" src="{{media.photo_links}}"> --}}
+
+</body>
+{{!-- 
+<p>Body Type: {{build.body_type}} </p>
+<p>Drivetrain: {{build.drivetrain}}</p>
+<p>Engine: {{build.engine}}</p>
+<p>Number of doors: {{build.doors}}</p>
+<p>Transmission: {{build.transmission}}</p> --}}
+
+
+
+<style>
+    .body {
+        background: url("https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Car_Show_%282652965535%29.jpg/1200px-Car_Show_%282652965535%29.jpg");
+    }
+
+    .something {
+        display: flex;
+        justify-content: center;
+        padding-top: 30px;
+    }
+
+    .testing {
+        min-height: 408px;
+    }
+
+    .heading {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    .searchBtn {
+        background: rgb(255, 60, 0);
+        color: white;
+        padding: 5px 10px;
+        border-radius: 10px;
+
+    }
+
+    .main {
+        text-align: right;
+        width: 500px;
+        height: 200px;
+    }
+</style>
