@@ -16,6 +16,28 @@ module.exports = function (app) {
     });
   });
 
+  app.get("/garage", function (req, res) {
+    db.Cars.findAll({}).then(function (dbCars) {
+      console.log(dbCars);
+
+      res.render("garage", { data: dbCars });
+    })
+  });
+
+  app.get("/newUser", function (req, res) {
+
+    const newUser = new UUID;
+    res.json({
+      uuid: newUser
+    })
+  });
+
+  app.get('/garage/:userId', function (req, res) {
+    db.Cars.findAll({ where: { id: req.params.userId } }).then((theirCars) => {
+      res.render("garage", { data: theirCars })
+    })
+  })
+
 
   app.post("/api/search", function (req, res) {
     // create takes an argument of an object describing the item we want to

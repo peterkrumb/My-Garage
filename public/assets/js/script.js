@@ -1,19 +1,36 @@
 $(document).ready(function () {
+
+    /* 
+    When page loads check local storage for "myGarageKey"
+    if (myGarageKey)
+       func getUsersCars (garageKey) {
+            $.ajax('/users/' + myGarageKey)
+            display rendered stuff
+       } 
+    else func getNewId () {
+        we get a uuid
+        ajax ('/newUser)
+            returns a new uuid @ res.data.uuid?
+            store uuid in localstorage
+        getUsersCars( uuid )
+    }
+    */
     // $(document).on("click", "button", function () {
     //     alert("working")
-})
-$(".searchBtn").on("click", function (event) {
-    event.preventDefault();
-    var car = $(".search").val().trim();
-    alert("clicked")
-    console.log(car);
-})
+    $(".searchBtn").on("click", function (event) {
+        event.preventDefault();
+        var car = $(".search").val().trim();
+        alert("clicked")
+        console.log(car);
+    })
 
-
-$('.carousel').carousel();
-
+    // $('.carousel').carousel();
+    $('.carousel-slider').slider({ full_width: true });
 
 })
+
+
+
 // function getAll() {
 
 //     var options = {

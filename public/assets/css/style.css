@@ -14,6 +14,10 @@
     margin: 0px 0;
     
 }
+#title{
+    /* position: relative; */
+    /* align-content: center; */
+}
 
 .logo{
     position: absolute;
@@ -25,13 +29,15 @@
 
 .everything {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     display: block;
     position: relative;
 }
 
 .everything::after {
     background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Car_Show_%282652965535%29.jpg/1200px-Car_Show_%282652965535%29.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
     content: "";
     opacity: .5;
     top: 0;
