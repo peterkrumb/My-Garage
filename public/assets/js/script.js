@@ -1,31 +1,36 @@
-$(document).ready(function () {
 
-    /* 
-    When page loads check local storage for "myGarageKey"
-    if (myGarageKey)
-       func getUsersCars (garageKey) {
-            $.ajax('/users/' + myGarageKey)
-            display rendered stuff
-       } 
-    else func getNewId () {
-        we get a uuid
-        ajax ('/newUser)
-            returns a new uuid @ res.data.uuid?
-            store uuid in localstorage
-        getUsersCars( uuid )
-    }
-    */
-    // $(document).on("click", "button", function () {
-    //     alert("working")
-    $(".searchBtn").on("click", function (event) {
+$(document).ready(function() {
+    $(document).on("click", "button", function() {
+        console.log("working");
+    })
+    $(".searchBtn").on("click", function(event) {
         event.preventDefault();
-        var car = $(".search").val().trim();
-        alert("clicked")
-        console.log(car);
+        var year = $("#year").val();
+        var make = $("#make").val();
+        var model = $("#model").val();
+        // var apiKey = "POlC5j3EWfUO6X8WI4utjku6XhR23Evl";
+        // var settings = {
+        //     "url": "http://marketcheck-prod.apigee.net/v2/search/car/active?api_key=" + apiKey +
+        //         "&year=" + year +
+        //         "&make=" + make +
+        //         "&model=" + model,
+        //     "method": "GET",
+        //     headers: {
+        //         'Content-Type': 'application/json'
+        //     }
+        // };
+        $.ajax({
+            url: `/api/marketchecksearch/${year}/${make}/${model}`,
+            method: "GET"
+        }).done(function(response) {
+            console.log(response);
+        })
+
     })
 
-    // $('.carousel').carousel();
-    $('.carousel-slider').slider({ full_width: true });
+
+    $('.carousel').carousel();
+
 
 })
 
@@ -67,4 +72,3 @@ $(document).ready(function () {
 // module.exports = {
 //     getAll: getAll
 // }
-
