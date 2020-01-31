@@ -15,6 +15,13 @@
     
 }
 
+.logo{
+    position: absolute;
+    height: 82px;
+    top: -2px;
+    left: 18px;
+    color: white
+}
 
 .everything {
     width: 100%;

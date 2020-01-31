@@ -1,16 +1,16 @@
 $(document).ready(function () {
-    $(document).on("click", "button", function () {
-        alert("working")
-    })
-    $(".searchBtn").on("click", function (event) {
-        event.preventDefault();
-        var car = $(".search").val();
-        alert("clicked")
-        console.log(car);
-    })
+    // $(document).on("click", "button", function () {
+    //     alert("working")
+})
+$(".searchBtn").on("click", function (event) {
+    event.preventDefault();
+    var car = $(".search").val().trim();
+    alert("clicked")
+    console.log(car);
+})
 
 
-    $('.carousel').carousel();
+$('.carousel').carousel();
 
 
 })
