@@ -1,19 +1,40 @@
-$(document).ready(function () {
-    // $(document).on("click", "button", function () {
-    //     alert("working")
+$(document).ready(function() {
+    $(document).on("click", "button", function() {
+        console.log("working");
+    })
+    $(".searchBtn").on("click", function(event) {
+        event.preventDefault();
+        var year = $("#year").val();
+        var make = $("#make").val();
+        var model = $("#model").val();
+        // var apiKey = "POlC5j3EWfUO6X8WI4utjku6XhR23Evl";
+        // var settings = {
+        //     "url": "http://marketcheck-prod.apigee.net/v2/search/car/active?api_key=" + apiKey +
+        //         "&year=" + year +
+        //         "&make=" + make +
+        //         "&model=" + model,
+        //     "method": "GET",
+        //     headers: {
+        //         'Content-Type': 'application/json'
+        //     }
+        // };
+        $.ajax({
+            url: `/api/marketchecksearch/${year}/${make}/${model}`,
+            method: "GET"
+        }).done(function(response) {
+            console.log(response);
+        })
+
+    })
+
+
+    $('.carousel').carousel();
+
+
 })
-$(".searchBtn").on("click", function (event) {
-    event.preventDefault();
-    var car = $(".search").val().trim();
-    alert("clicked")
-    console.log(car);
-})
 
 
-$('.carousel').carousel();
 
-
-})
 // function getAll() {
 
 //     var options = {
@@ -50,4 +71,3 @@ $('.carousel').carousel();
 // module.exports = {
 //     getAll: getAll
 // }
-
