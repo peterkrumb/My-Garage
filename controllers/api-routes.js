@@ -5,7 +5,7 @@ var db = require("../models");
 module.exports = function (app) {
 
   // GET route for getting all of the Cars
-  app.get("/garage", function (req, res) {
+  app.get("/", function (req, res) {
     // console.log("hitting route");
     // console.log(req);
 
