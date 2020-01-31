@@ -1,0 +1,18 @@
+#footer{
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+#navbar{
+    text-align: center;
+}
+
+#currentday{
+    float: left;
+}
+
+#bigname{
+    text-align: center;
+    margin-bottom: 0px;
+}
