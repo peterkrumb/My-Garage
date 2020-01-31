@@ -5,15 +5,18 @@ var db = require("../models");
 module.exports = function (app) {
 
   // GET route for getting all of the Cars
-  app.get("/api/garage", function (req, res) {
-    // findAll returns all entries for a table when used with no options
+  app.get("/garage", function (req, res) {
+    // console.log("hitting route");
+    // console.log(req);
+
     db.Cars.findAll({}).then(function (dbCars) {
-      // We have access to the Cars as an argument inside of the callback function
-      res.json(dbCars);
+      console.log(dbCars);
+
+      res.render("index", { data: dbCars });
     });
   });
 
-  // POST route for saving a new todo
+
   app.post("/api/search", function (req, res) {
     // create takes an argument of an object describing the item we want to
     // insert into our table. In this case we just we pass in an object with a text

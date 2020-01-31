@@ -1,15 +1,21 @@
 module.exports = function (sequelize, DataTypes) {
-    var Cars = sequelize.define("cars", {
+    var Cars = sequelize.define("Cars", {
         name: {
             type: DataTypes.STRING,
         },
-        year: {
-            type: DataTypes.INTEGER,
-        },
-        bought: {
+        heading: {
             type: DataTypes.STRING,
-            defaultValue: false
-        }
+        },
+        image: {
+            type: DataTypes.BLOB,
+        },
+        body_type: {
+            type: DataTypes.STRING,
+        },
+        drivetrain: {
+            type: DataTypes.STRING,
+        },
+        uui: DataTypes.STRING,
     });
     return Cars;
 };

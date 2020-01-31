@@ -37,6 +37,8 @@ body{
     background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Car_Show_%282652965535%29.jpg/1200px-Car_Show_%282652965535%29.jpg");
     content: "";
     opacity: .5;
+    height: 100%;
+    width: 100%;
     top: 0;
     left: 0;
     bottom: 0;
