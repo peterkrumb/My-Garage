@@ -10,6 +10,9 @@ $(document).ready(function () {
     })
 
 
+    $('.carousel').carousel();
+
+
 })
 // function getAll() {
 
@@ -41,10 +44,6 @@ $(document).ready(function () {
 // }
 
 
-$(document).ready(function () {
-    $("#currentday").text(moment().format('MMMM Do YYYY'));
-    $('.carousel').carousel();
-});
 
 
 // getAll();

@@ -9,22 +9,12 @@
     text-align: center;
 }
 
-#currentday{
-    float: left;
-}
-
 #bigname{
     text-align: center;
-    margin-bottom: 0px;
-
-body{
-    background-image: url(assets/images/car.jpg);
-
+    margin: 0px 0;
+    
 }
 
-#main{
-    display: hidden;
-}
 
 .everything {
     width: 100%;
@@ -37,8 +27,6 @@ body{
     background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Car_Show_%282652965535%29.jpg/1200px-Car_Show_%282652965535%29.jpg");
     content: "";
     opacity: .5;
-    height: 100%;
-    width: 100%;
     top: 0;
     left: 0;
     bottom: 0;
