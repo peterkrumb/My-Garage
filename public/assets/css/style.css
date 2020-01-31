@@ -1,3 +1,22 @@
+
+#footer{
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+#navbar{
+    text-align: center;
+}
+
+#currentday{
+    float: left;
+}
+
+#bigname{
+    text-align: center;
+    margin-bottom: 0px;
+
 body{
     background-image: url(assets/images/car.jpg);
 
@@ -66,4 +85,5 @@ body{
     padding: 20px;
     margin-bottom: 30px;
     border-radius: 10px;
+
 }
