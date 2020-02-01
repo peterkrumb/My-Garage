@@ -1,9 +1,17 @@
 
+
+$(document).ready(function () {
+    $(document).on("click", "button", function () {
+        console.log("working");
+    })
+    $(".searchBtn").on("click", function (event) {
+
 $(document).ready(function() {
     $(document).on("click", "button", function() {
         console.log("working");
     })
     $(".searchBtn").on("click", function(event) {
+
         event.preventDefault();
         var year = $("#year").val();
         var make = $("#make").val();
@@ -22,17 +30,20 @@ $(document).ready(function() {
         $.ajax({
             url: `/api/marketchecksearch/${year}/${make}/${model}`,
             method: "GET"
+
         }).done(function(response) {
+
             console.log(response);
         })
 
     })
 
 
-    $('.carousel').carousel();
+
 
 
 })
+
 
 
 

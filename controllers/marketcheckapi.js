@@ -1,6 +1,11 @@
 var request = require("request");
 
 
+module.exports = function (app) {
+
+    app.get("/api/marketchecksearch/:year/:make/:model", function (req, res) {
+
+
 // $(document).ready(function() {
 //     $(document).on("click", "button", function() {
 //         alert("working")
@@ -44,6 +49,7 @@ module.exports = function(app) {
         });
     });
     app.get("/api/marketchecksearch/:year/:make/:model", function(req, res) {
+
         var apiKey = "POlC5j3EWfUO6X8WI4utjku6XhR23Evl";
         var settings = {
             "url": "http://marketcheck-prod.apigee.net/v2/search/car/active?api_key=" + apiKey +
@@ -56,6 +62,23 @@ module.exports = function(app) {
             }
         };
         // $.ajax(settings).done(function(response) {
+
+        request(settings, function (error, response) {
+            var parse = JSON.parse(response.body)
+
+            console.log("!!!!!!!!!!!!===============================!!!!!!!!!!!!!!!!!!!!!!!!!");
+            // console.log(response.body)
+            console.log("!!!!!!!!!!!!===============================!!!!!!!!!!!!!!!!!!!!!!!!!");
+
+            // console.log(parse.listings);
+            var data = parse.listings
+            console.log(data);
+
+            res.render("index", { data: data })
+        })
+    })
+}
+
         request(settings, function(error, response) {
             var parse = JSON.parse(response.body)
             console.log(parse);
@@ -65,3 +88,4 @@ module.exports = function(app) {
 }
 
 // })
+
