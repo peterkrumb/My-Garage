@@ -46,7 +46,7 @@ module.exports = function (app) {
     });
     app.get("/api/marketchecksearch/:year/:make/:model", function (req, res) {
 
-        var apiKey = "POlC5j3EWfUO6X8WI4utjku6XhR23Evl";
+        var apiKey = "wOLQfAk15aAqNUfsrUEHFA25GTOhALLm";
         var settings = {
             "url": "http://marketcheck-prod.apigee.net/v2/search/car/active?api_key=" + apiKey +
                 "&year=" + req.params.year +
@@ -63,14 +63,15 @@ module.exports = function (app) {
             var parse = JSON.parse(response.body)
 
             console.log("!!!!!!!!!!!!===============================!!!!!!!!!!!!!!!!!!!!!!!!!");
-            // console.log(response.body)
+            console.log(response.body)
             console.log("!!!!!!!!!!!!===============================!!!!!!!!!!!!!!!!!!!!!!!!!");
 
             // console.log(parse.listings);
             var data = parse.listings
-            console.log(data);
+            console.log("this is data", data);
 
-            res.render("index", { data: data })
+            // res.render("index", { data: data })
+            res.json(data)
         })
     })
 }
