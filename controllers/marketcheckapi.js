@@ -13,8 +13,8 @@ var request = require("request");
 //         console.log(car);
 //     })
 
-module.exports = function (app) {
-    app.get("/api/marketcheck", function (req, res) {
+module.exports = function(app) {
+    app.get("/api/marketcheck", function(req, res) {
         var options = {
             method: 'GET',
             url: 'http://api.marketcheck.com/v2/search/car/active?api_key=wOLQfAk15aAqNUfsrUEHFA25GTOhALLm&year=2017',
@@ -22,7 +22,7 @@ module.exports = function (app) {
                 'host': 'marketcheck-prod.apigee.net',
             }
         };
-        request(options, function (error, response) {
+        request(options, function(error, response) {
             var parse = JSON.parse(response.body)
             console.log(parse);
 
@@ -44,7 +44,7 @@ module.exports = function (app) {
 
         });
     });
-    app.get("/api/marketchecksearch/:year/:make/:model", function (req, res) {
+    app.get("/api/marketchecksearch/:year/:make/:model", function(req, res) {
 
         var apiKey = "POlC5j3EWfUO6X8WI4utjku6XhR23Evl";
         var settings = {
@@ -59,7 +59,7 @@ module.exports = function (app) {
         };
         // $.ajax(settings).done(function(response) {
 
-        request(settings, function (error, response) {
+        request(settings, function(error, response) {
             var parse = JSON.parse(response.body)
 
             console.log("!!!!!!!!!!!!===============================!!!!!!!!!!!!!!!!!!!!!!!!!");
@@ -78,4 +78,3 @@ module.exports = function (app) {
 
 
 // })
-

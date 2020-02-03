@@ -18,7 +18,7 @@
     <div class="cards">
         <div class="row">
             <div class="col m12">
-                {{#each data }}
+                
                 <div class="testing col s4 m3">
                     <div class="card">
                         <div class="card-image">
@@ -28,7 +28,7 @@
                                     class="material-icons">+</i></a>
                         </div>
                         <div class="card-content">
-                            <p class="heading">{{heading}}</p>
+                            <p class="heading">{{data.heading}}</p>
                             <p class="body-type">Body Type: {{build.body_type}} </p>
                             <p class="drivetrain">Drivetrain: {{build.drivetrain}}</p>
                             <p class="engine">Engine: {{build.engine}}</p>
@@ -37,7 +37,7 @@
                         </div>
                     </div>
                 </div>
-                {{/each}}
+                
             </div>
         </div>
     </div>
