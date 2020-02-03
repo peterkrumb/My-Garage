@@ -56,7 +56,7 @@ $(document).ready(function () {
 
                 // })
 
-                for (let i = 0; i < 8; i++) {
+                for (let i = 0; i < 4; i++) {
 
                     console.log("this is the res loop", response[i]);
 
@@ -121,7 +121,7 @@ $(document).ready(function () {
             url: `/api/newUser/`,
             method: "GET"
         }).then(function (data) {
-            uniqueID = data.uuid;
+            uniqueID = data.newUser;
             storeUUID()
         })
     }
@@ -144,6 +144,15 @@ $(document).ready(function () {
 
 
 
+
+
+
+
+    $(".hover").mouseleave(
+        function () {
+            $(this).removeClass("hover");
+        }
+    );
 
 
 })
