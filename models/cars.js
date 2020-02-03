@@ -15,7 +15,7 @@ module.exports = function (sequelize, DataTypes) {
         drivetrain: {
             type: DataTypes.STRING,
         },
-        uui: DataTypes.STRING,
+        uuid: DataTypes.STRING,
     });
     return Cars;
 };

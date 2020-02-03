@@ -7,6 +7,7 @@
 }
 #navbar{
     text-align: center;
+   
 }
 
 #bigname{
@@ -15,7 +16,9 @@
     
 }
 #title{
-    /* position: relative; */
+    position: relative;
+    margin-left: 236px;
+    font-size: 30px;
     /* align-content: center; */
 }
 
@@ -59,9 +62,16 @@
     padding-top: 30px;
 }
 
+.cards-row{
+    
+}
+
 .testing {
+    
+    display: inline-block;
     min-height: 408px;
-    border-radius: 10px !important;
+    margin-left: 0;
+   
 }
 
 .heading {
@@ -88,6 +98,9 @@
     border-radius: 10px;
 
 }
+/* .hide{
+    display: none;
+} */
 
 /* ================================= */
 
@@ -116,7 +129,7 @@
     animation: moveSlideshow 30s linear infinite;
   }
   .tech-slideshow .mover-2 {
-    opacity: 0;
+        opacity: 0;
     transition: opacity 0.5s ease-out;
     background-position: 0 -200px;
     animation: moveSlideshow 15s linear infinite;
@@ -131,3 +144,19 @@
     }
   }
 /* ================================================ */
+
+
+@media (max-width: 442px){
+    .newcar{
+        display: none;
+    }
+
+}
+
+@media (max-width: 675px){
+    #title{
+       
+        display: none;
+        
+    }
+}

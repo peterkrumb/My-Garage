@@ -1,4 +1,5 @@
 var db = require("../models");
+const uuidv1 = require('uuid/v1');
 
 // Routes
 // =============================================================
@@ -10,7 +11,7 @@ module.exports = function (app) {
     // console.log(req);
 
     db.Cars.findAll({}).then(function (dbCars) {
-      console.log(dbCars);
+      console.log("dbCars:", dbCars);
 
       res.render("index", { data: dbCars });
     });
@@ -24,11 +25,12 @@ module.exports = function (app) {
     })
   });
 
-  app.get("/newUser", function (req, res) {
+  app.get("/api/newUser", function (req, res) {
 
-    const newUser = new UUID;
+    var uuid = uuidv1()
+
     res.json({
-      uuid: newUser
+      uuid: uuid
     })
   });
 
