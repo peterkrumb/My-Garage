@@ -1,8 +1,8 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
     var vin = ""
 
-    $(".searchBtn").on("click", function(event) {
+    $(".searchBtn").on("click", function (event) {
 
         event.preventDefault();
 
@@ -28,11 +28,11 @@ $(document).ready(function() {
         // console.log(year, make, model);
 
         $.ajax({
-                url: `/api/marketchecksearch/${year}/${make}/${model}`,
-                method: "GET"
+            url: `/api/marketchecksearch/${year}/${make}/${model}`,
+            method: "GET"
 
-            })
-            .done(function(response) {
+        })
+            .done(function (response) {
                 $('.cards-row').empty()
                 console.log(response);
 
@@ -81,29 +81,29 @@ $(document).ready(function() {
 
     })
 
-    $(document).on("click", "#add-btn", function(event) {
+    $(document).on("click", "#add-btn", function (event) {
         // event.preventDefault();
         console.log("hitting");
 
         const userCar = {
-                image: $(this).data("image"),
-                heading: $(this).data("heading"),
-                body_type: $(this).data("body_type"),
-                drivetrain: $(this).data("drivetrain"),
-                engine: $(this).data("engine"),
-                doors: $(this).data("doors"),
-                transmission: $(this).data("transmission"),
-                uuid: localStorage.getItem("UUID")
-            }
-            //console.log(userCar);
+            image: $(this).data("image"),
+            heading: $(this).data("heading"),
+            body_type: $(this).data("body_type"),
+            drivetrain: $(this).data("drivetrain"),
+            engine: $(this).data("engine"),
+            doors: $(this).data("doors"),
+            transmission: $(this).data("transmission"),
+            uuid: localStorage.getItem("UUID")
+        }
+        //console.log(userCar);
 
 
         $.ajax({
-                url: `/api/add`,
-                method: "POST",
-                data: userCar
-            })
-            .done(function(response) {
+            url: `/api/add`,
+            method: "POST",
+            data: userCar
+        })
+            .done(function (response) {
                 console.log(response);
 
             })
@@ -114,12 +114,12 @@ $(document).ready(function() {
 
     //  get uniqueID from localStorage 
     uniqueID = localStorage.getItem("UUID")
-        //  take a string and make an arr
+    //  take a string and make an arr
     uniqueID = JSON.parse(uniqueID)
-        // if uniqueID exists 
+    // if uniqueID exists 
     if (uniqueID === null) {
         console.log("id is null")
-            // assign value from lS to uniqueID
+        // assign value from lS to uniqueID
         getUUID();
     }
 
@@ -127,8 +127,8 @@ $(document).ready(function() {
         $.ajax({
             url: `/api/newUser/`,
             method: "GET"
-        }).then(function(data) {
-            console.log("received uuid");
+        }).then(function (data) {
+            // console.log("received uuid");
 
             uniqueID = data.uuid;
             storeUUID()
@@ -150,11 +150,23 @@ $(document).ready(function() {
 
     }
 
+    console.log(uniqueID);
+
+    function getCarsbyUUID() {
+        $.ajax({
+            url: `/garage/${uniqueID}`,
+            method: "GET"
+        }).then(function (data) {
 
 
 
 
 
+        })
+    }
+
+
+    getCarsbyUUID()
 
 
 
