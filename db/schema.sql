@@ -8,6 +8,9 @@ CREATE TABLE Cars (
     image_id int(10) NOT NULL auto_increment,
     image blob,
     body_type varchar (255),
+    engine varchar(255),
+    doors varchar(20),
+    transmission varchar(200),
     drivetrain varchar(60),
     uui varchar(60)
 

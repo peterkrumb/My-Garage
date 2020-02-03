@@ -46,8 +46,13 @@ module.exports = function (app) {
     // insert into our table. In this case we just we pass in an object with a text
     // and complete property (req.body)
     db.Cars.create({
-      name: req.body.name,
-      year: req.body.year
+      image: media.photo_links,
+      heading: heading,
+      body_type: build.body_type,
+      driventrain: build.drivetrain,
+      engine: build.engine,
+      doors: build.doors,
+      transmission: transmission
     }).then(function (dbCars) {
       // We have access to the new Cars as an argument inside of the callback function
       res.json(dbCars);
