@@ -65,15 +65,15 @@ $(document).ready(function() {
                       </div>`)
 
 
-                    $(".photolink").attr("src", response[i].media.photo_links)
-                    $(".heading").text(response[i].heading)
-                    $(".body-type").text("Body Type: " + response[i].build.body_type)
-                    $(".drivetrain").text("Drivetrain: " + response[i].build.drivetrain)
-                    $(".engine").text("Engine: " + response[i].build.engine)
-                    $(".doors").text("Doors: " + response[i].build.doors)
-                    $(".transmission").text("Transmission: " + response[i].build.transmission)
+                    // $(".photolink").attr("src", response[i].media.photo_links)
+                    // $(".heading").text(response[i].heading)
+                    // $(".body-type").text("Body Type: " + response[i].build.body_type)
+                    // $(".drivetrain").text("Drivetrain: " + response[i].build.drivetrain)
+                    // $(".engine").text("Engine: " + response[i].build.engine)
+                    // $(".doors").text("Doors: " + response[i].build.doors)
+                    // $(".transmission").text("Transmission: " + response[i].build.transmission)
 
-                    vin = response[i]
+                    // vin = response[i]
 
                 }
 
