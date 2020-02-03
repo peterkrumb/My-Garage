@@ -24,7 +24,7 @@ app.set("view engine", "handlebars");
 // script.getAll();
 
 //app.use(routes);
-var uuid = uuidv1()
+// var uuid = uuidv1()
 // module.exports = uuid
 
 //app.use(routes);
