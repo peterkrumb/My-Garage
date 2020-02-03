@@ -6,7 +6,9 @@ $(document).ready(function() {
 
         event.preventDefault();
 
+
         $(".marquee").addClass("hide")
+
 
 
         var year = $("#year").val();
@@ -35,30 +37,33 @@ $(document).ready(function() {
                 console.log(response);
 
 
+
                 for (let i = 0; i < 8; i++) {
+                    console.log(response[i]);
 
-                    console.log("this is the res loop", response[i]);
+                    // var responses = JSON.stringify(response[i])
+                    // console.log("this is the res loop" + JSON.stringify(response[i]));
 
-
-
+                    // $('.cards-row' + [i]).empty()
                     $(".cards-row").append(` <div class="testing col s4 m3">
                     <div class="card">
                     <div class="card-image">
-                        <img class="photolink" src="">
+                        <img id="height1" class="photolink" src="${response[i].media.photo_links[0]}">
                         <span class="card-title"></span>
                         <a class="btn-floating halfway-fab waves-effect waves-light red" data-body_type=${response[i].build.body_type} data-engine="${response[i].build.engine}" data-img="${response[i].media.photo_links[0]}" data-drivetrain="${response[i].build.drivetrain}" data-doors="${response[i].build.doors}" data-transmission="${response[i].build.transmission}" data-heading="${response[i].heading}" id="add-btn"><i
                                 class="material-icons"  data-engine=${response[i]} data-image data- body_type data-drivetrain data-doors data-transmission>+</i></a>
                     </div>
-                    <div class="card-content">
-                       <p class="heading"></p>
-                         <p class="body-type"></p>
-                         <p class="drivetrain"></p>
-                         <p class="engine"></p>
-                         <p class="doors"></p>
-                         <p class="transmission"> </p>
+                    <div id="height2" class="card-content">
+                       <p class="heading">${response[i].heading}</p>
+                         <p class="body-type">Body-type: ${response[i].build.body_type}</p>
+                         <p class="drivetrain">Driventrain: ${response[i].build.drivetrain}</p>
+                         <p class="engine">Engine: ${response[i].build.engine}</p>
+                         <p class="doors">Doors: ${response[i].build.doors}</p>
+                         <p class="transmission">Transmission: ${response[i].build.transmission}</p>
                      </div>
                       </div>
                       </div>`)
+
 
                     $(".photolink").attr("src", response[i].media.photo_links)
                     $(".heading").text(response[i].heading)
@@ -92,6 +97,7 @@ $(document).ready(function() {
             }
             //console.log(userCar);
 
+
         $.ajax({
                 url: `/api/add`,
                 method: "POST",
@@ -99,6 +105,7 @@ $(document).ready(function() {
             })
             .done(function(response) {
                 console.log(response);
+
             })
 
     })
