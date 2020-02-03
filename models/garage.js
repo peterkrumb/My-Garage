@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-    var Cars = sequelize.define("Cars", {
+    var myCars = sequelize.define("myCars", {
         heading: {
             type: DataTypes.STRING,
         },
@@ -21,9 +21,7 @@ module.exports = function(sequelize, DataTypes) {
         transmission: {
             type: DataTypes.STRING,
         },
-
-        uuid: { type: DataTypes.STRING },
-
+        uuid: { type: DataTypes.STRING }
     });
-    return Cars;
+    return myCars;
 };
