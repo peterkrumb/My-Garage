@@ -23,8 +23,7 @@ app.set("view engine", "handlebars");
 
 // script.getAll();
 
-//app.use(routes);
-// var uuid = uuidv1()
+
 // module.exports = uuid
 
 //app.use(routes);
@@ -35,7 +34,7 @@ require("./controllers/marketcheckapi")(app);
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
-db.sequelize.sync({ force: true }).then(function () {
+db.sequelize.sync().then(function () {
     app.listen(PORT, function () {
         console.log("App listening on http://localhost:" + PORT);
     });
