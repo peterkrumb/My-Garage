@@ -6,7 +6,9 @@ $(document).ready(function () {
 
         event.preventDefault();
 
+
         $(".marquee").addClass("hide")
+
 
 
         var year = $("#year").val();
@@ -33,6 +35,7 @@ $(document).ready(function () {
             .done(function (response) {
                 $('.cards-row').empty()
                 console.log(response);
+
 
 
                 // response.map(car => {
@@ -98,6 +101,9 @@ $(document).ready(function () {
                 }
 
 
+
+
+             
 
 
             })

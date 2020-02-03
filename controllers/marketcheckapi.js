@@ -1,25 +1,13 @@
 var request = require("request");
 
 
-
-// $(document).ready(function() {
-//     $(document).on("click", "button", function() {
-//         alert("working")
-//     })
-//     $(".searchBtn").on("click", function(event) {
-//         event.preventDefault();
-//         var car = $(".search").val();
-//         alert("clicked")
-//         console.log(car);
-//     })
-
 module.exports = function (app) {
     app.get("/api/marketcheck", function (req, res) {
         var options = {
             method: 'GET',
             url: 'http://api.marketcheck.com/v2/search/car/active?api_key=wOLQfAk15aAqNUfsrUEHFA25GTOhALLm&year=2017',
             headers: {
-                'host': 'marketcheck-prod.apigee.net',
+                host: 'marketcheck-prod.apigee.net',
             }
         };
         request(options, function (error, response) {
@@ -48,35 +36,33 @@ module.exports = function (app) {
 
         var apiKey = "wOLQfAk15aAqNUfsrUEHFA25GTOhALLm";
         var settings = {
-            "url": "http://marketcheck-prod.apigee.net/v2/search/car/active?api_key=" + apiKey +
+            url: "http://marketcheck-prod.apigee.net/v2/search/car/active?api_key=" + apiKey +
                 "&year=" + req.params.year +
                 "&make=" + req.params.make +
                 "&model=" + req.params.model,
-            "method": "GET",
+            method: "GET",
             headers: {
                 'Content-Type': 'application/json'
             }
         };
         // $.ajax(settings).done(function(response) {
+        console.log(settings.url);
 
         request(settings, function (error, response) {
             var parse = JSON.parse(response.body)
 
             console.log("!!!!!!!!!!!!===============================!!!!!!!!!!!!!!!!!!!!!!!!!");
-            console.log(response.body)
+
             console.log("!!!!!!!!!!!!===============================!!!!!!!!!!!!!!!!!!!!!!!!!");
 
             // console.log(parse.listings);
             var data = parse.listings
-            console.log("this is data", data);
 
-            // res.render("index", { data: data })
             res.json(data)
         })
     })
-}
 
 
 
-// })
+};
 

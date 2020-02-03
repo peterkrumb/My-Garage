@@ -21,7 +21,7 @@ module.exports = function (sequelize, DataTypes) {
         transmission: {
             type: DataTypes.STRING,
         },
-        uui: DataTypes.STRING,
+        uuid: DataTypes.STRING,
     });
     return Cars;
 };
