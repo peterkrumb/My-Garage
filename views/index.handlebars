@@ -17,34 +17,21 @@
     </div>
     <div class="cards">
         <div class="row">
-            <div class="col m12">
-                {{#each data }}
+            <div class="cards-row col m12">
+
                 <div class="testing col s4 m3">
                     <div class="card">
-                        <div class="card-image">
-                            <img class="photolink" src="{{media.photo_links}}">
-                            <span class="card-title"></span>
-                            <a class="btn-floating halfway-fab waves-effect waves-light red"><i
-                                    class="material-icons">+</i></a>
-                        </div>
-                        <div class="card-content">
-                            <p class="heading">{{heading}}</p>
-                            <p class="body-type">Body Type: {{build.body_type}} </p>
-                            <p class="drivetrain">Drivetrain: {{build.drivetrain}}</p>
-                            <p class="engine">Engine: {{build.engine}}</p>
-                            <p class="doors">Number of doors: {{build.doors}}</p>
-                            <p class="transmission">Transmission: {{transmission}}</p>
-                        </div>
+
                     </div>
                 </div>
-                {{/each}}
+
             </div>
         </div>
     </div>
     {{!-- <img class="car-image" src="{{media.photo_links}}"> --}}
 
 
-    <div class="container">
+    <div class="marquee container">
         <div class="tech-slideshow">
             <div class="mover-1"></div>
             <div class="mover-2"></div>
