@@ -57,40 +57,42 @@ $(document).ready(function () {
                 // })
 
                 for (let i = 0; i < 8; i++) {
+                    console.log(response[i]);
 
-                    console.log("this is the res loop", response[i]);
+                    // var responses = JSON.stringify(response[i])
+                    // console.log("this is the res loop" + JSON.stringify(response[i]));
 
-
-
+                    // $('.cards-row' + [i]).empty()
                     $(".cards-row").append(` <div class="testing col s4 m3">
                     <div class="card">
                     <div class="card-image">
-                        <img class="photolink" src="">
+                        <img id="height1" class="photolink" src="${response[i].media.photo_links[0]}">
                         <span class="card-title"></span>
                         <a class="btn-floating halfway-fab waves-effect waves-light red"><i
                                 class="material-icons">+</i></a>
                     </div>
-                    <div class="card-content">
-                       <p class="heading"></p>
-                         <p class="body-type"></p>
-                         <p class="drivetrain"></p>
-                         <p class="engine"></p>
-                         <p class="doors"></p>
-                         <p class="transmission"> </p>
+                    <div id="height2" class="card-content">
+                       <p class="heading">${response[i].heading}</p>
+                         <p class="body-type">Body-type: ${response[i].build.body_type}</p>
+                         <p class="drivetrain">Driventrain: ${response[i].build.drivetrain}</p>
+                         <p class="engine">Engine: ${response[i].build.engine}</p>
+                         <p class="doors">Doors: ${response[i].build.doors}</p>
+                         <p class="transmission">Transmission: ${response[i].build.transmission}</p>
                      </div>
                       </div>
                       </div>`)
 
-                    $(".photolink").attr("src", response[i].media.photo_links)
-                    $(".heading").text(response[i].heading)
-                    $(".body-type").text("Body Type: " + response[i].build.body_type)
-                    $(".drivetrain").text("Drivetrain: " + response[i].build.drivetrain)
-                    $(".engine").text("Engine: " + response[i].build.engine)
-                    $(".doors").text("Doors: " + response[i].build.doors)
-                    $(".transmission").text("Transmission: " + response[i].build.transmission)
+                    // $(".photolink").attr("src", response[i].media.photo_links[0])
+                    // $(".heading").text(response[i].heading)
+                    // $(".body-type").text("Body Type: " + response[i].build.body_type)
+                    // $(".drivetrain").text("Drivetrain: " + response[i].build.drivetrain)
+                    // $(".engine").text("Engine: " + response[i].build.engine)
+                    // $(".doors").text("Doors: " + response[i].build.doors)
+                    // $(".transmission").text("Transmission: " + response[i].build.transmission);
+                    // console.log(response[i].heading);
 
-
-                    vin = response[i]
+                    // return html[i];
+                    // vin = response[i]
 
 
                 }
