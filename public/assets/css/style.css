@@ -1,133 +1,135 @@
 
 #footer{
-    text-align: center;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 0;
 }
 #navbar{
-    text-align: center;
+  text-align: center;
 }
 
 #bigname{
-    text-align: center;
-    margin: 0px 0;
-    
+  text-align: center;
+  margin: 0px 0;
+  
 }
-#title{
-    /* position: relative; */
-    /* align-content: center; */
+#height1{
+height: 180px;
 }
-
+#height2{
+max-height: 180px;
+}
 .logo{
-    position: absolute;
-    height: 82px;
-    top: -2px;
-    left: 18px;
-    color: white
+  position: absolute;
+  height: 82px;
+  top: -2px;
+  left: 18px;
+  color: white
 }
 
 .everything {
-    width: 100%;
-    height: 100vh;
-    display: block;
-    position: relative;
+  width: 100%;
+  height: 100vh;
+  display: block;
+  position: relative;
 }
 
 .everything::after {
-    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Car_Show_%282652965535%29.jpg/1200px-Car_Show_%282652965535%29.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    content: "";
-    opacity: .5;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    position: absolute;
-    z-index: -1;
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Car_Show_%282652965535%29.jpg/1200px-Car_Show_%282652965535%29.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  content: "";
+  opacity: .5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
 }
 
 .search {
-    font-weight: bolder;
+  font-weight: bolder;
 
 }
 
 .something {
-    display: flex;
-    justify-content: center;
-    padding-top: 30px;
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
 }
 
 .testing {
-    min-height: 408px;
-    border-radius: 10px !important;
+  min-height: 408px;
+  border-radius: 10px !important;
 }
 
 .heading {
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    /* overflow: hidden; */
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  /* overflow: hidden; */
 }
 
 .searchBtn {
-    background: rgb(255, 60, 0);
-    color: white;
-    padding: 5px 10px;
-    border-radius: 10px;
+  background: rgb(255, 60, 0);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 10px;
 
 }
 
 .main {
-    text-align: right;
-    width: 550px;
-    height: 200px;
-    background-color: white;
-    padding: 20px;
-    margin-bottom: 30px;
-    border-radius: 10px;
+  text-align: right;
+  width: 550px;
+  height: 200px;
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 10px;
 
 }
 
 /* ================================= */
 
 .tech-slideshow {
-    height: 250px;
-    min-width: 70vw;
-    margin: 0 auto;
-    position: relative;
-    overflow: hidden;
-    transform: translate3d(0, 0, 0);
+  height: 250px;
+  min-width: 70vw;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
 
-  }
+}
+
+.tech-slideshow > div {
+  height: 250px;
+  width: 2526px;
+  background: url(https://i.imgur.com/9gaLHGD.gif);
   
-  .tech-slideshow > div {
-    height: 250px;
-    width: 2526px;
-    background: url(https://i.imgur.com/9gaLHGD.gif);
-    
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    transform: translate3d(0, 0, 0);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  transform: translate3d(0, 0, 0);
+}
+.tech-slideshow .mover-1 {
+  animation: moveSlideshow 30s linear infinite;
+}
+.tech-slideshow .mover-2 {
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+  background-position: 0 -200px;
+  animation: moveSlideshow 15s linear infinite;
+}
+/* .tech-slideshow:hover .mover-2 {
+  opacity: 1;
+} */
+
+@keyframes moveSlideshow {
+  100% { 
+    transform: translateX(-66.6666%);  
   }
-  .tech-slideshow .mover-1 {
-    animation: moveSlideshow 30s linear infinite;
-  }
-  .tech-slideshow .mover-2 {
-    opacity: 0;
-    transition: opacity 0.5s ease-out;
-    background-position: 0 -200px;
-    animation: moveSlideshow 15s linear infinite;
-  }
-  /* .tech-slideshow:hover .mover-2 {
-    opacity: 1;
-  } */
-  
-  @keyframes moveSlideshow {
-    100% { 
-      transform: translateX(-66.6666%);  
-    }
-  }
+}
 /* ================================================ */
