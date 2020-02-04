@@ -34,7 +34,7 @@ module.exports = function (app) {
     });
     app.get("/api/marketchecksearch/:year/:make/:model", function (req, res) {
 
-        var apiKey = "wOLQfAk15aAqNUfsrUEHFA25GTOhALLm";
+        var apiKey = "rjLhRJZLk5NfKMNlyABmMQmHNBGQeeqc";
         var settings = {
             url: "http://marketcheck-prod.apigee.net/v2/search/car/active?api_key=" + apiKey +
                 "&year=" + req.params.year +

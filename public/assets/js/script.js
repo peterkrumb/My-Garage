@@ -47,7 +47,7 @@ $(document).ready(function () {
                     // console.log("this is the res loop" + JSON.stringify(response[i]));
 
                     // $('.cards-row' + [i]).empty()
-                    $(".cards-row").append(` <div class="testing col s4 m3">
+                    $(".cards-row").append(` <div class="main-cards col s4 m3">
                     <div class="card">
                     <div class="card-image">
                         <img id="height1" class="photolink" src="${response[i].media.photo_links[0]}">
