@@ -21,33 +21,34 @@ module.exports = function (app) {
   // app.get("/garage/", function (req, res) {
 
 
-    app.get("/garage", function(req, res) {
-        db.myCars.findAll({}).then(function(dbCars) {
-            console.log(dbCars);
+  app.get("/garage", function (req, res) {
+    db.myCars.findAll({}).then(function (dbCars) {
+      console.log(dbCars);
 
 
 
-  //     res.render("garage", { data: dbCars });
-  //   });
-  // });
+      res.render("garage", { data: dbCars });
+    });
+  });
 
   app.get("garage/:uniqueID", function (req, res) {
     db.myCars.findAll({ where: { uuid: req.params.uniqueID } }).then(function (data) {
       console.log(data);
-
-
-    app.get('/garage/:userId', function(req, res) {
-        db.myCars.findAll({ where: { uuid: req.params.uniqueID } }).then((theirCars) => {
-                res.json(theirCars);
-            })
-            .catch(function(err) {
-                // Whenever a validation or flag fails, an error is thrown
-                // We can "catch" the error to prevent it from being "thrown", which could crash our node app
-                res.json(err);
-            });
-
-    })
+    });
   });
+
+  app.get('/garage/:userId', function (req, res) {
+    db.myCars.findAll({ where: { uuid: req.params.uniqueID } }).then((theirCars) => {
+      res.json(theirCars);
+    })
+      .catch(function (err) {
+        // Whenever a validation or flag fails, an error is thrown
+        // We can "catch" the error to prevent it from being "thrown", which could crash our node app
+        res.json(err);
+      });
+
+  })
+
 
   app.get("/api/newUser", function (req, res) {
 
@@ -102,13 +103,13 @@ module.exports = function (app) {
       });
   });
 
-    app.get("garage/:uniqueID", function(req, res) {
-        db.myCars.findAll({ where: { uuid: req.params.uniqueID } }).then(function(data) {
-            //console.log(data);
-            var parse = JSON.parse(data);
-            console.log(parse);
-            res.render("garage", { data: data });
-        })
-    });
+  app.get("garage/:uniqueID", function (req, res) {
+    db.myCars.findAll({ where: { uuid: req.params.uniqueID } }).then(function (data) {
+      //console.log(data);
+      var parse = JSON.parse(data);
+      console.log(parse);
+      res.render("garage", { data: data });
+    })
+  });
 
 };
