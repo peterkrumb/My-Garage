@@ -221,7 +221,7 @@ $(document).ready(function () {
         $.ajax({
             method: "DELETE",
             url: "/garage/" + id
-        })
+        }).then(window.location.reload());
 
 
     };
