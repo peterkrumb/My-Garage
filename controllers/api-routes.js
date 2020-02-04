@@ -18,12 +18,21 @@ module.exports = function (app) {
       res.render("index", { data: dbCars });
     });
   });
+  // app.get("/garage/", function (req, res) {
 
-  app.get("/garage/:uniqueID", function (req, res) {
+  //   db.Cars.findAll({}).then(function (dbCars) {
+  //     console.log(dbCars);
+
+
+  //     res.render("garage", { data: dbCars });
+  //   });
+  // });
+
+  app.get("garage/:uniqueID", function (req, res) {
     db.myCars.findAll({ where: { uuid: req.params.uniqueID } }).then(function (data) {
       console.log(data);
 
-      res.json(data);
+      res.render("garage", { data: data });
     })
   });
 
