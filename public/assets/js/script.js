@@ -1,8 +1,8 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
     var vin = ""
 
-    $(".searchBtn").on("click", function(event) {
+    $(".searchBtn").on("click", function (event) {
 
         event.preventDefault();
 
@@ -28,17 +28,17 @@ $(document).ready(function() {
         // console.log(year, make, model);
 
         $.ajax({
-                url: `/api/marketchecksearch/${year}/${make}/${model}`,
-                method: "GET"
+            url: `/api/marketchecksearch/${year}/${make}/${model}`,
+            method: "GET"
 
-            })
-            .done(function(response) {
+        })
+            .done(function (response) {
                 $('.cards-row').empty()
                 console.log(response);
 
 
 
-                for (let i = 0; i < 8; i++) {
+                for (let i = 0; i < 4; i++) {
                     console.log(response[i]);
 
                     // var responses = JSON.stringify(response[i])
@@ -81,11 +81,12 @@ $(document).ready(function() {
 
     })
 
-    $(document).on("click", "#add-btn", function(event) {
+    $(document).on("click", "#add-btn", function (event) {
         // event.preventDefault();
         console.log("hitting");
 
         const userCar = {
+
                 image: $(this).data("img"),
                 heading: $(this).data("heading"),
                 body_type: $(this).data("body_type"),
@@ -98,12 +99,13 @@ $(document).ready(function() {
             //console.log(userCar);
 
 
+
         $.ajax({
-                url: `/api/add`,
-                method: "POST",
-                data: userCar
-            })
-            .done(function(response) {
+            url: `/api/add`,
+            method: "POST",
+            data: userCar
+        })
+            .done(function (response) {
                 console.log(response);
 
             })
@@ -114,12 +116,12 @@ $(document).ready(function() {
 
     //  get uniqueID from localStorage 
     uniqueID = localStorage.getItem("UUID")
-        //  take a string and make an arr
+    //  take a string and make an arr
     uniqueID = JSON.parse(uniqueID)
-        // if uniqueID exists 
+    // if uniqueID exists 
     if (uniqueID === null) {
         console.log("id is null")
-            // assign value from lS to uniqueID
+        // assign value from lS to uniqueID
         getUUID();
     }
 
@@ -127,8 +129,8 @@ $(document).ready(function() {
         $.ajax({
             url: `/api/newUser/`,
             method: "GET"
-        }).then(function(data) {
-            console.log("received uuid");
+        }).then(function (data) {
+            // console.log("received uuid");
 
             uniqueID = data.uuid;
             storeUUID()
@@ -183,16 +185,29 @@ $(document).ready(function() {
     function storeUUID() {
         console.log("storing uuid");
 
-        localStorage.setItem("UUID", JSON.stringify(uniqueID));
+        localStorage.setItem("UUID", uniqueID);
         console.log("id stored");
 
     }
 
+    console.log(uniqueID);
+
+    function getCarsbyUUID() {
+        $.ajax({
+            url: `/garage/${uniqueID}`,
+            method: "GET"
+        }).then(function (data) {
+
+            console.log("new data=================", data);
 
 
 
 
+        })
+    }
 
+
+    getCarsbyUUID()
 
 
 
