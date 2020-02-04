@@ -112,4 +112,18 @@ module.exports = function (app) {
     })
   });
 
+
+  app.delete("/garage/:id", function (req, res) {
+    console.log(req.params.id);
+
+    db.myCars.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(function (dbCars) {
+      // We have access to the new Cars as an argument inside of the callback function
+      res.json(dbCars);
+    });
+  });
+
 };

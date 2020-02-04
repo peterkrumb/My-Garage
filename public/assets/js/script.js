@@ -1,3 +1,5 @@
+// import { response } from "express";
+
 $(document).ready(function () {
 
     var vin = ""
@@ -87,16 +89,16 @@ $(document).ready(function () {
 
         const userCar = {
 
-                image: $(this).data("img"),
-                heading: $(this).data("heading"),
-                body_type: $(this).data("body_type"),
-                drivetrain: $(this).data("drivetrain"),
-                engine: $(this).data("engine"),
-                doors: $(this).data("doors"),
-                transmission: $(this).data("transmission"),
-                uuid: localStorage.getItem("UUID")
-            }
-            //console.log(userCar);
+            image: $(this).data("img"),
+            heading: $(this).data("heading"),
+            body_type: $(this).data("body_type"),
+            drivetrain: $(this).data("drivetrain"),
+            engine: $(this).data("engine"),
+            doors: $(this).data("doors"),
+            transmission: $(this).data("transmission"),
+            uuid: localStorage.getItem("UUID")
+        }
+        //console.log(userCar);
 
 
 
@@ -140,10 +142,10 @@ $(document).ready(function () {
 
     function getCarsbyUUID() {
         $.ajax({
-                url: `/garage/${uniqueID}`,
-                method: "GET"
-            })
-            .done(function(response) {
+            url: `/garage/${uniqueID}`,
+            method: "GET"
+        })
+            .done(function (response) {
                 var parse = JSON.parse(response);
                 //console.log(parse);
 
@@ -177,7 +179,7 @@ $(document).ready(function () {
             })
     }
     getCarsbyUUID()
-        // console.log(uniqueID);
+    // console.log(uniqueID);
 
     // storeUUID()
 
@@ -209,48 +211,58 @@ $(document).ready(function () {
 
     getCarsbyUUID()
 
+    $(document).on("click", ".delete-car", handleDeleteButtonPress);
+
+    function handleDeleteButtonPress() {
+        console.log(event);
+        console.log(event.target.id);
+
+        var id = event.target.id;
+        $.ajax({
+            method: "DELETE",
+            url: "/garage/" + id
+        })
 
 
-
-})
-
-
-
-
-
-// function getAll() {
-
-//     var options = {
-//         method: 'GET',
-//         url: 'http://api.marketcheck.com/v2/search/car/active?api_key=Ya546Kh7BRRrFkCKAeOJ5ShV6Mp1oJAD&year=2015&make=ford',
-//         headers: {
-//             'host': 'marketcheck-prod.apigee.net',
-//         }
-//     };
-//     request(options, function (error, response) {
-//         if (error) throw error;
-//         var parse = JSON.parse(response.body);
-//         var image = parse.listings[0].media.photo_links[0]
-//         $(".car-image").attr("src", image);
-//         $(".heading").text(parse.listings[0].heading);
-
-//         console.log(parse.listings[0].media.photo_links[0]);
-//         console.log(parse.listings[0].heading);
-//         console.log(parse.listings[0].build.body_type);
-//         console.log(parse.listings[0].build.drivetrain);
-//         console.log(parse.listings[0].build.engine);
-//         console.log(parse.listings[0].build.doors);
-//         console.log(parse.listings[0].build.transmission);
-
-
-//     });
-
-// }
+    };
 
 
 
 
-// getAll();
-// module.exports = {
-//     getAll: getAll
-// }
+
+    // function getAll() {
+
+    //     var options = {
+    //         method: 'GET',
+    //         url: 'http://api.marketcheck.com/v2/search/car/active?api_key=Ya546Kh7BRRrFkCKAeOJ5ShV6Mp1oJAD&year=2015&make=ford',
+    //         headers: {
+    //             'host': 'marketcheck-prod.apigee.net',
+    //         }
+    //     };
+    //     request(options, function (error, response) {
+    //         if (error) throw error;
+    //         var parse = JSON.parse(response.body);
+    //         var image = parse.listings[0].media.photo_links[0]
+    //         $(".car-image").attr("src", image);
+    //         $(".heading").text(parse.listings[0].heading);
+
+    //         console.log(parse.listings[0].media.photo_links[0]);
+    //         console.log(parse.listings[0].heading);
+    //         console.log(parse.listings[0].build.body_type);
+    //         console.log(parse.listings[0].build.drivetrain);
+    //         console.log(parse.listings[0].build.engine);
+    //         console.log(parse.listings[0].build.doors);
+    //         console.log(parse.listings[0].build.transmission);
+
+
+    //     });
+
+    // }
+
+
+
+
+    // getAll();
+    // module.exports = {
+    //     getAll: getAll
+});
