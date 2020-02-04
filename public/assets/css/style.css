@@ -1,11 +1,18 @@
 
 #footer{
-  text-align: center;
+  align-items: center;
   position: fixed;
-  bottom: 0;
+  bottom: 0px;
   width: 100%;
   padding: 0;
 }
+.page-footer{
+    padding-top: 0px;
+}
+.copyright{
+    margin: auto;
+}
+
 #navbar{
 
     text-align: center;
@@ -43,30 +50,57 @@ max-height: 180px;
   color: white
 }
 
-.everything {
+.garageContainer {
   width: 100%;
   /* height: 100vh; */
   display: block;
   position: relative;
+  margin-bottom: 0px;
+  padding-bottom:280px;
  
 }
+.garageContainer::after{  
 
-.everything::after {
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Car_Show_%282652965535%29.jpg/1200px-Car_Show_%282652965535%29.jpg");
-  background-repeat: repeat-y !important;
-  /* background-size: cover; */
-  content: "";
-  opacity: .5;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  z-index: -1;
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Car_Show_%282652965535%29.jpg/1200px-Car_Show_%282652965535%29.jpg");
+    background-repeat: repeat;
+    /* background-size: cover; */
+    content: "";
+    opacity: .5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+    /* height: 100vh; */
 }
+
+.all {
+    width: 100%;
+    height: 100vh;
+    display: block;
+    position: relative;
+   
+  }
+  .all::after{  
+  
+      background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Car_Show_%282652965535%29.jpg/1200px-Car_Show_%282652965535%29.jpg");
+      /* background-repeat: repea !important; */
+      background-size: cover;
+      content: "";
+      opacity: .5;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      position: absolute;
+      z-index: -1;
+  }
+
 
 .search {
   font-weight: bolder;
+  
 
 }
 
@@ -75,21 +109,39 @@ max-height: 180px;
   justify-content: center;
   padding-top: 30px;
 }
+.card-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  
+}
 
 
-.testing {
-
-    
+.main-cards {
     display: inline-block;
     min-height: 408px;
+    max-width: 260px;
+    min-width: 260px;
     margin-left: 0;
+    position: relative;
+    animation-name: card-trick;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
 
+}
+@keyframes card-trick{
+    0%{opacity: 0; bottom: -75px;}
+    100%{opacity: 1; bottom: 0px;}
+}
+.photolink{
+    max-width: 260px;
 }
 
 .heading {
   text-overflow: ellipsis;
   white-space: nowrap;
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 .searchBtn {
@@ -108,6 +160,8 @@ max-height: 180px;
   padding: 20px;
   margin-bottom: 30px;
   border-radius: 10px;
+  box-shadow:0 0 7px rgb(61, 61, 61);
+
 
 }
 /* .hide{
@@ -184,6 +238,9 @@ max-height: 180px;
 .snip1273{
     max-width: 400px;
     min-width: 400px;
+    /* border: 2px solid black; */
+    border-radius: 10px;
+    box-shadow:0 0 7px rgb(61, 61, 61);
 }
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,500,700);
 .snip1273 {
@@ -209,6 +266,7 @@ max-height: 180px;
   position: relative;
   max-width: 100%;
   vertical-align: top;
+  border-radius: 10px;
 }
 .snip1273 figcaption {
   position: absolute;
@@ -312,4 +370,29 @@ max-height: 180px;
 .snip1273:hover figcaption:after,
 .snip1273.hover figcaption:after {
   opacity: 0.1;
+}
+
+
+
+@media (max-width: 573px){
+    nav{
+        height: 134px;
+    }
+}
+@media (max-width: 680px){
+    nav{
+        /* height: 134px; */
+       width:   100vw;
+    }
+   
+    #title{
+        margin: auto;
+        /* top: 65px; */
+        padding-left: 150px;
+        float: left;
+
+    }
+         
+        
+   
 }
