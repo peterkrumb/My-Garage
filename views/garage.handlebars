@@ -1,12 +1,22 @@
-<figure class="snip1273">
-    <img src="https://static.cargurus.com/images/article/2016/12/21/10/21/2017_ford_focus_preview_overview-pic-2924362191861712051-1600x1200.jpeg"
-        alt="sample72" />
-    <figcaption>
-        <h3>2017 Ford Focus </h3>
-        <p>body type:</p>
-        <p>drivetrain</p>
-        <p>engine</p>
-        <p>doors</p>
-        <p>transmission</p>
-    </figcaption>
-</figure>
+
+{{#each data}}
+<div class="testing col s4 m3">
+                    <div class="card">
+                    <div class="card-image">
+                        <img id="height1" class="photolink" src="{{dataValues.image}}">
+                        <span class="card-title"></span>
+                        <a class="btn-floating halfway-fab waves-effect waves-light red" /><i
+                                class="material-icons">+</i></a>
+                    </div>
+                    <div id="height2" class="card-content">
+                       <p class="heading">{{dataValues.heading}}</p>
+                         <p class="body-type">Body-type: {{dataValues.body_type}}</p>
+                         <p class="drivetrain">Driventrain: {{dataValues.drivetrain}}</p>
+                         <p class="engine">Engine: {{dataValues.engine}}</p>
+                         <p class="doors">Doors: {{dataValues.doors}}</p>
+                         <p class="transmission">Transmission: {{dataValues.transmission}}</p>
+                     </div>
+                      </div>
+                      </div>
+                      {{/each}}
+
