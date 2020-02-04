@@ -86,7 +86,7 @@ $(document).ready(function() {
         console.log("hitting");
 
         const userCar = {
-                image: $(this).data("image"),
+                image: $(this).data("img"),
                 heading: $(this).data("heading"),
                 body_type: $(this).data("body_type"),
                 drivetrain: $(this).data("drivetrain"),
@@ -136,8 +136,46 @@ $(document).ready(function() {
     }
 
 
+    function getCarsbyUUID() {
+        $.ajax({
+                url: `/garage/${uniqueID}`,
+                method: "GET"
+            })
+            .done(function(response) {
+                var parse = JSON.parse(response);
+                //console.log(parse);
 
-    // console.log(uniqueID);
+
+
+                for (let i = 0; i < 8; i++) {
+                    //console.log(response[i]);
+
+                    // var responses = JSON.stringify(response[i])
+                    // console.log("this is the res loop" + JSON.stringify(response[i]));
+
+                    // $('.cards-row' + [i]).empty()
+                    $("body").append(` <div class="testing col s4 m3">
+                    <div class="card">
+                    <div class="card-image">
+                        <img id="height1" class="photolink" src="${response[i].media.photo_links}">
+                        <span class="card-title"></span>
+                    
+                    </div>
+                    <div id="height2" class="card-content">
+                       <p class="heading">${response[i].heading}</p>
+                         <p class="body-type">Body-type: ${response[i].build.body_type}</p>
+                         <p class="drivetrain">Driventrain: ${response[i].build.drivetrain}</p>
+                         <p class="engine">Engine: ${response[i].build.engine}</p>
+                         <p class="doors">Doors: ${response[i].build.doors}</p>
+                         <p class="transmission">Transmission: ${response[i].build.transmission}</p>
+                     </div>
+                      </div>
+                      </div>`)
+                }
+            })
+    }
+    getCarsbyUUID()
+        // console.log(uniqueID);
 
     // storeUUID()
 
