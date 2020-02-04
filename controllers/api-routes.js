@@ -122,7 +122,12 @@ module.exports = function (app) {
       }
     }).then(function (dbCars) {
       // We have access to the new Cars as an argument inside of the callback function
-      res.json(dbCars);
+      res.redirect("/garage");
+
+    }).catch(function (err) {
+      // Whenever a validation or flag fails, an error is thrown
+      // We can "catch" the error to prevent it from being "thrown", which could crash our node app
+      res.json(err);
     });
   });
 
