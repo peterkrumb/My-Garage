@@ -38,7 +38,7 @@ $(document).ready(function () {
 
 
 
-                for (let i = 0; i < 8; i++) {
+                for (let i = 0; i < 4; i++) {
                     console.log(response[i]);
 
                     // var responses = JSON.stringify(response[i])
@@ -145,7 +145,7 @@ $(document).ready(function () {
     function storeUUID() {
         console.log("storing uuid");
 
-        localStorage.setItem("UUID", JSON.stringify(uniqueID));
+        localStorage.setItem("UUID", uniqueID);
         console.log("id stored");
 
     }
@@ -158,6 +158,7 @@ $(document).ready(function () {
             method: "GET"
         }).then(function (data) {
 
+            console.log("new data=================", data);
 
 
 
