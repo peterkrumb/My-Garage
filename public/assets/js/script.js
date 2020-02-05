@@ -2,14 +2,14 @@
 
 $(document).ready(function () {
 
-    var vin = ""
+    // var vin = ""
 
     $(".searchBtn").on("click", function (event) {
 
         event.preventDefault();
 
 
-        $(".marquee").addClass("hide")
+        // $(".marquee").addClass("hide")
 
 
 
@@ -36,6 +36,7 @@ $(document).ready(function () {
         })
             .done(function (response) {
                 $('.cards-row').empty()
+                $(".marquee").addClass("hide")
                 console.log(response);
 
 
