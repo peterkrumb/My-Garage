@@ -1,4 +1,5 @@
 var db = require("../models");
+const { Op } = require("sequelize")
 const uuidv1 = require('uuid/v1');
 
 // Routes
@@ -18,32 +19,40 @@ module.exports = function (app) {
       res.render("index", { data: dbCars });
     });
   });
-  // app.get("/garage/", function (req, res) {
 
-
-  app.get("/garage", function (req, res) {
-    db.myCars.findAll({}).then(function (dbCars) {
-      console.log(dbCars);
+  // app.get("/garage", function (req, res) {
+  //   db.myCars.findAll({}).then(function (dbCars) {
+  //     console.log(dbCars);
 
 
 
-      res.render("garage", { data: dbCars });
-    });
-  });
+  //     res.render("garage", { data: dbCars });
+  //   });
+  // });
 
-  app.get("garage/:uniqueID", function (req, res) {
-    db.myCars.findAll({ where: { uuid: req.params.uniqueID } }).then(function (data) {
-      console.log(data);
-    });
-  });
+  // app.get("garage/:uniqueID", function (req, res) {
+  //   console.log("this one is req.params", req.params);
 
-  app.get('/garage/:userId', function (req, res) {
-    db.myCars.findAll({ where: { uuid: req.params.uniqueID } }).then((theirCars) => {
-      res.json(theirCars);
+  //   db.myCars.findAll({ where: { uuid: req.params.uniqueID } }).then(function (data) {
+  //     console.log("over here!", data);
+  //     res.json("garage", { data: data })
+  //   })
+  //     .catch(function (err) {
+  //       res.json(err);
+  //     });
+
+  // });
+
+  app.get('/garage/:uniqueID', function (req, res) {
+    console.log("are we working?", req.params);
+    console.log(typeof req.params.uniqueID);
+
+    db.myCars.findAll({ where: { uuid: { [Op.eq]: req.params.uniqueID } } }).then((theirCars) => {
+      console.log("theircars", theirCars);
+      res.render("garage", { data: theirCars });
+
     })
       .catch(function (err) {
-        // Whenever a validation or flag fails, an error is thrown
-        // We can "catch" the error to prevent it from being "thrown", which could crash our node app
         res.json(err);
       });
 
@@ -59,17 +68,10 @@ module.exports = function (app) {
   });
 
 
-  // app.get('/garage/:userId', function (req, res) {
-  //   db.Cars.findAll({ where: { id: req.params.userId } }).then((theirCars) => {
-  //     res.render("garage", { data: theirCars })
-  //   })
-  // })
 
 
   app.post("/api/search", function (req, res) {
-    // create takes an argument of an object describing the item we want to
-    // insert into our table. In this case we just we pass in an object with a text
-    // and complete property (req.body)
+
     db.Cars.create({
       image: media.photo_links,
       heading: heading,
@@ -83,50 +85,38 @@ module.exports = function (app) {
       res.json(dbCars);
     })
       .catch(function (err) {
-        // Whenever a validation or flag fails, an error is thrown
-        // We can "catch" the error to prevent it from being "thrown", which could crash our node app
+
         res.json(err);
       });
   });
 
   app.post("/api/add", function (req, res) {
-    console.log(req.body);
+    console.log("api add", req.body);
     db.myCars.create(req.body)
       .then(function (dbCars) {
-        // We have access to the new Cars as an argument inside of the callback function
+
         res.json(dbCars);
       })
       .catch(function (err) {
-        // Whenever a validation or flag fails, an error is thrown
-        // We can "catch" the error to prevent it from being "thrown", which could crash our node app
+
         res.json(err);
       });
   });
 
-  app.get("garage/:uniqueID", function (req, res) {
-    db.myCars.findAll({ where: { uuid: req.params.uniqueID } }).then(function (data) {
-      //console.log(data);
-      var parse = JSON.parse(data);
-      console.log(parse);
-      res.render("garage", { data: data });
-    })
-  });
-
 
   app.delete("/garage/:id", function (req, res) {
-    console.log(req.params.id);
+    console.log("delete", req.params.id);
 
     db.myCars.destroy({
       where: {
         id: req.params.id
       }
     }).then(function (dbCars) {
-      // We have access to the new Cars as an argument inside of the callback function
+
       res.redirect("/garage");
 
     }).catch(function (err) {
-      // Whenever a validation or flag fails, an error is thrown
-      // We can "catch" the error to prevent it from being "thrown", which could crash our node app
+
       res.json(err);
     });
   });

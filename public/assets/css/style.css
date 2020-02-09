@@ -267,6 +267,8 @@ max-height: 180px;
   max-width: 100%;
   vertical-align: top;
   border-radius: 10px;
+  min-height: 300px;
+  max-height: 300px;
 }
 .snip1273 figcaption {
   position: absolute;
