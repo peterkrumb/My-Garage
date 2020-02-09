@@ -3,16 +3,16 @@
         <div id="main" class="main col s12">
             <div class="row">
                 <div class="year col s6">
-                    <input id="year" type="text" placeholder="Year">
+                    <input id="year" type="text" placeholder="Year" required>
                 </div>
                 <div class="make col s6">
-                    <input id="make" type="text" placeholder="Make">
+                    <input id="make" type="text" placeholder="Make" required>
                 </div>
                 <div class="Model col s12">
-                    <input id="model" type="text" placeholder="Model">
+                    <input id="model" type="text" placeholder="Model" required>
                 </div>
             </div>
-            <button class="searchBtn">Submit</button>
+            <button href="/" class="searchBtn waves-effect waves-light btn modal-trigger">Submit</button>
 
         </div>
     </div>
@@ -30,7 +30,14 @@
         </div>
     </div>
     {{!-- <img class="car-image" src="{{media.photo_links}}"> --}}
-
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Please enter all inputs</h4>
+    </div>
+    <div class="modal-footer">
+      <a href="/" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+  </div>
 
     <div class="marquee container">
         <div class="tech-slideshow">

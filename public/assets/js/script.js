@@ -2,10 +2,12 @@
 
 $(document).ready(function () {
 
-    // main page search and populate cards
+
     $(".searchBtn").on("click", function (event) {
         event.preventDefault();
+
         $(".marquee").addClass("hide")
+
         var year = $("#year").val();
         var make = $("#make").val();
         var model = $("#model").val();
@@ -16,6 +18,7 @@ $(document).ready(function () {
         })
             .done(function (response) {
                 $('.cards-row').empty()
+                $(".marquee").addClass("hide")
                 console.log(response);
 
                 for (let i = 0; i < 4; i++) {
