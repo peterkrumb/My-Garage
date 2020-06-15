@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm run"
   },
   "repository": {
     "type": "git",
@@ -19,6 +20,7 @@
   "homepage": "https://github.com/peterkrumb/My-Garage#readme",
   "dependencies": {
     "axios": "^0.19.2",
+    "compression": "^1.7.4",
     "express": "^4.17.1",
     "express-handlebars": "^3.1.0",
     "mysql": "^2.18.1",
