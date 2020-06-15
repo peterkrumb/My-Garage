@@ -1,53 +1,48 @@
-
-#footer{
+#footer {
   align-items: center;
   position: fixed;
   bottom: 0px;
   width: 100%;
   padding: 0;
 }
-.page-footer{
-    padding-top: 0px;
+.page-footer {
+  padding-top: 0px;
 }
-.copyright{
-    margin: auto;
-}
-
-#navbar{
-
-    text-align: center;
-   
-
+.copyright {
+  margin: auto;
 }
 
-#bigname{
+#navbar {
+  text-align: center;
+}
+
+#bigname {
   text-align: center;
   margin: 0px 0;
-  
 }
 
-#title{
-    position: relative;
-    margin-left: 236px;
-    font-size: 30px;
-    /* align-content: center; */
+#title {
+  position: relative;
+  margin-left: 236px;
+  font-size: 30px;
+  /* align-content: center; */
 }
 
-#height1{
-height: 180px;
-width: 240px;
+#height1 {
+  height: 180px;
+  width: 240px;
 }
 
-#height2{
-max-height: 180px;
+#height2 {
+  max-height: 180px;
 }
 
-.logo{
+.logo {
   position: absolute;
   height: 82px;
   top: -2px;
   left: 18px;
-  color: white
+  color: white;
 }
 
 .garageContainer {
@@ -56,52 +51,45 @@ max-height: 180px;
   display: block;
   position: relative;
   margin-bottom: 0px;
-  padding-bottom:280px;
- 
+  padding-bottom: 280px;
 }
-.garageContainer::after{  
-
-    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Car_Show_%282652965535%29.jpg/1200px-Car_Show_%282652965535%29.jpg");
-    background-repeat: repeat;
-    /* background-size: cover; */
-    content: "";
-    opacity: .5;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    position: absolute;
-    z-index: -1;
-    /* height: 100vh; */
+.garageContainer::after {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Car_Show_%282652965535%29.jpg/1200px-Car_Show_%282652965535%29.jpg");
+  background-repeat: repeat;
+  /* background-size: cover; */
+  content: "";
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+  /* height: 100vh; */
 }
 
 .all {
-    width: 100%;
-    height: 100vh;
-    display: block;
-    position: relative;
-   
-  }
-  .all::after{  
-  
-      background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Car_Show_%282652965535%29.jpg/1200px-Car_Show_%282652965535%29.jpg");
-      /* background-repeat: repea !important; */
-      background-size: cover;
-      content: "";
-      opacity: .5;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      position: absolute;
-      z-index: -1;
-  }
-
+  width: 100%;
+  height: 100vh;
+  display: block;
+  position: relative;
+}
+.all::after {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Car_Show_%282652965535%29.jpg/1200px-Car_Show_%282652965535%29.jpg");
+  /* background-repeat: repea !important; */
+  background-size: cover;
+  content: "";
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
 
 .search {
   font-weight: bolder;
-  
-
 }
 
 .something {
@@ -113,29 +101,32 @@ max-height: 180px;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  
 }
-
 
 .main-cards {
-    display: inline-block;
-    min-height: 408px;
-    max-width: 260px;
-    min-width: 260px;
-    margin-left: 0;
-    position: relative;
-    animation-name: card-trick;
-    animation-duration: 2s;
-    animation-fill-mode: forwards;
-    animation-iteration-count: 1;
-
+  display: inline-block;
+  min-height: 408px;
+  max-width: 260px;
+  min-width: 260px;
+  margin-left: 0;
+  position: relative;
+  animation-name: card-trick;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
 }
-@keyframes card-trick{
-    0%{opacity: 0; bottom: -75px;}
-    100%{opacity: 1; bottom: 0px;}
+@keyframes card-trick {
+  0% {
+    opacity: 0;
+    bottom: -75px;
+  }
+  100% {
+    opacity: 1;
+    bottom: 0px;
+  }
 }
-.photolink{
-    max-width: 260px;
+.photolink {
+  max-width: 260px;
 }
 
 .heading {
@@ -149,7 +140,14 @@ max-height: 180px;
   color: white;
   padding: 0px 10px;
   border-radius: 10px;
+}
 
+.material-icons:hover {
+  color: #000000;
+}
+
+.btn-floating i {
+  margin-top: -2px;
 }
 
 .main {
@@ -160,9 +158,7 @@ max-height: 180px;
   padding: 20px;
   margin-bottom: 30px;
   border-radius: 10px;
-  box-shadow:0 0 7px rgb(61, 61, 61);
-
-
+  box-shadow: 0 0 7px rgb(61, 61, 61);
 }
 /* .hide{
     display: none;
@@ -177,74 +173,93 @@ max-height: 180px;
   position: relative;
   overflow: hidden;
   transform: translate3d(0, 0, 0);
+}
 
+.tech-slideshow > div {
+  height: 250px;
+  width: 2526px;
+  background: url(https://i.imgur.com/9gaLHGD.gif);
 
-  }
-  
-  .tech-slideshow > div {
-    height: 250px;
-    width: 2526px;
-    background: url(https://i.imgur.com/9gaLHGD.gif);
-    
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    transform: translate3d(0, 0, 0);
-  }
-  .tech-slideshow .mover-1 {
-    animation: moveSlideshow 30s linear infinite;
-  }
-  .tech-slideshow .mover-2 {
-        opacity: 0;
-    transition: opacity 0.5s ease-out;
-    background-position: 0 -200px;
-    animation: moveSlideshow 15s linear infinite;
-  }
-  /* .tech-slideshow:hover .mover-2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  transform: translate3d(0, 0, 0);
+}
+.tech-slideshow .mover-1 {
+  animation: moveSlideshow 30s linear infinite;
+}
+.tech-slideshow .mover-2 {
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+  background-position: 0 -200px;
+  animation: moveSlideshow 15s linear infinite;
+}
+/* .tech-slideshow:hover .mover-2 {
     opacity: 1;
   } */
 
-
 @keyframes moveSlideshow {
-  100% { 
-    transform: translateX(-66.6666%);  
+  100% {
+    transform: translateX(-66.6666%);
   }
 }
 
-
 /* =========================================================== */
 
-.delete-car{
-    padding:  0px 17px 7px 17px;
-    font-size:40px;
-    border-radius: 30px;
-    color: white;
-    float: right;
-    position: absolute;
-    bottom: 20px;
-    right: 30px;
-    border: none;
-    cursor: pointer;
+.delete-car {
+  padding: 0px 17px 7px 17px;
+  font-size: 40px;
+  border-radius: 30px;
+  color: white;
+  float: right;
+  position: absolute;
+  bottom: 20px;
+  right: 30px;
+  border: none;
+  cursor: pointer;
 }
 
-.garageContainer{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+.garageContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
-.snip1273{
-    max-width: 400px;
-    min-width: 400px;
-    /* border: 2px solid black; */
-    border-radius: 10px;
-    box-shadow:0 0 7px rgb(61, 61, 61);
+.modal1 {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+  font-family: "Metal Mania", cursive;
+  text-align: center;
 }
-@import url(https://fonts.googleapis.com/css?family=Raleway:400,500,700);
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #000000;
+  width: 80%;
+}
+
 .snip1273 {
-  font-family: 'Raleway', Arial, sans-serif;
+  max-width: 400px;
+  min-width: 400px;
+  /* border: 2px solid black; */
+  border-radius: 10px;
+  box-shadow: 0 0 7px rgb(61, 61, 61);
+}
+@import url(https://fonts.googleapis.com/css?family=Raleway:400, 500, 700);
+.snip1273 {
+  font-family: "Raleway", Arial, sans-serif;
   position: relative;
   margin: 10px;
   margin-top: 30px;
@@ -303,7 +318,6 @@ max-height: 180px;
   font-size: 25px;
   text-overflow: ellipsis;
   text-transform: uppercase;
- 
 }
 .snip1273 p {
   font-size: 17px;
@@ -323,7 +337,7 @@ max-height: 180px;
 .snip1273 figcaption:before,
 .snip1273 figcaption:after {
   position: absolute;
-  content: '';
+  content: "";
   background-color: #ffffff;
   z-index: 1;
   -webkit-transition: all 0.4s ease-in;
@@ -374,27 +388,21 @@ max-height: 180px;
   opacity: 0.1;
 }
 
-
-
-@media (max-width: 573px){
-    nav{
-        height: 134px;
-    }
+@media (max-width: 573px) {
+  nav {
+    height: 134px;
+  }
 }
-@media (max-width: 680px){
-    nav{
-        /* height: 134px; */
-       width:   100vw;
-    }
-   
-    #title{
-        margin: auto;
-        /* top: 65px; */
-        padding-left: 150px;
-        float: left;
+@media (max-width: 680px) {
+  nav {
+    /* height: 134px; */
+    width: 100vw;
+  }
 
-    }
-         
-        
-   
+  #title {
+    margin: auto;
+    /* top: 65px; */
+    padding-left: 150px;
+    float: left;
+  }
 }
